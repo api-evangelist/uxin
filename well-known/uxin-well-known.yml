@@ -1,0 +1,35 @@
+generated: '2026-07-21'
+method: searched
+source: live probe of https://www.xin.com and https://www.youxinpai.com
+note: >-
+  No /.well-known/ discovery documents are published. www.xin.com sits behind an
+  Aliyun WAF that answers many paths with an HTML 405 error page (an initial 200
+  on /oauth-authorization-server was re-fetched and verified to be the Aliyun 405
+  HTML error page, not RFC 8414 metadata). www.youxinpai.com answers 403 for most
+  well-known paths. No documents were saved because none exist.
+hosts:
+  - host: https://www.xin.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 405
+        note: HTML Aliyun WAF error page; not OAuth metadata
+      - path: /.well-known/api-catalog
+        status: 405
+      - path: /.well-known/ai-plugin.json
+        status: 405
+  - host: https://www.youxinpai.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 403
+      - path: /.well-known/oauth-authorization-server
+        status: 403
+      - path: /.well-known/api-catalog
+        status: 403
+      - path: /.well-known/ai-plugin.json
+        status: 403

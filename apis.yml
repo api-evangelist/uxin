@@ -1,7 +1,22 @@
 aid: uxin
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/uxin.png
 name: Uxin
-description: 'Uxin is a company surfaced as a portfolio company of dcm-ventures and added to the API Evangelist
-  network as a stub for enrichment. Sector: consumer. This profile is a lead awaiting the enrichment pipeline.'
+description: 'Uxin (优信) is a Chinese used-car e-commerce company backed by DCM Ventures. It operates
+  the xin.com consumer used-car retail marketplace and the Youxinpai (优信拍) B2B online used-car auction
+  and trading platform that connects dealers with buyers, including vehicle listings, auctions, logistics,
+  and post-sale services. Uxin publishes no public developer portal or API documentation as of this
+  enrichment pass.'
 url: https://raw.githubusercontent.com/api-evangelist/uxin/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -10,11 +25,22 @@ x-backed-by:
 x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
+x-enrichment:
+  date: '2026-07-21'
+  status: minimal
+  artifacts_added: 3
+  pass: local-v1
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
 tags:
 - Company
 - Consumer
+- Automotive
+- Used Cars
+- Marketplace
+- Auctions
+- eCommerce
+- China
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -22,5 +48,15 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/uxin-domain-security.yml
+- type: LLMsTxt
+  url: llms/uxin-llms.txt
+- type: Website
+  url: https://www.xin.com/
 - type: Website
   url: https://www.youxinpai.com/trade
+- type: Investors
+  url: http://ir.xin.com/
+- type: Support
+  url: https://www.youxinpai.com/static/about?tab=lxwm
